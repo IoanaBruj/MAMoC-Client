@@ -38,8 +38,8 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getTargetContext();
         framework = MamocFramework.getInstance(appContext);
         mn = new MobileNode(appContext);
-        en = new EdgeNode("192.168.0.12", 8080);
-        cn = new CloudNode("136.54.65.23", 8080);
+        en = new EdgeNode("54.87.75.89", 8080);
+        cn = new CloudNode("54.87.75.89", 8080);
     }
 
     // MAMoC Framework Tests
@@ -81,7 +81,7 @@ public class ExampleInstrumentedTest {
         framework = MamocFramework.getInstance(appContext);
         framework.start();
 
-        en.setIp("192.168.0.12");
+        en.setIp("54.87.75.89");
 
         framework.serviceDiscovery.addEdgeDevice(en);
         Task task = new Task();
@@ -120,7 +120,7 @@ public class ExampleInstrumentedTest {
     @Test
     public void addMobileDevices() {
         mn.setDeviceID("mn1");
-        mn.setIp("136.64.53.132");
+        mn.setIp("54.87.75.89");
         framework.serviceDiscovery.addMobileDevice(mn);
 
         assertFalse(framework.serviceDiscovery.listMobileNodes().isEmpty());
